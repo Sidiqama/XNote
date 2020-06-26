@@ -96,9 +96,10 @@ public class Edit extends AppCompatActivity {
                  Toast.makeText(this, "Note Updated.", Toast.LENGTH_SHORT).show();
 
                 Intent i = new Intent(getApplicationContext(),Details.class);
+                i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 i.putExtra("ID",note.getId());
                 startActivity(i);
-
+                onBackPressed();
             } else {
                 noteTitle.setError("Title Can not be Blank.");
             }
